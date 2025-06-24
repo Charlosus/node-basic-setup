@@ -1,0 +1,64 @@
+{
+  "Console log": {
+    "prefix": "log",
+    "body": ["console.log('$1');"],
+    "description": "Szybki console.log"
+  },
+  "Named import": {
+    "prefix": "imp",
+    "body": ["import { $1 } from '$2';"],
+    "description": "Import z nazwanym składnikiem (ESM)"
+  },
+  "Default import": {
+    "prefix": "imd",
+    "body": ["import $1 from '$2';"],
+    "description": "Import domyślny (ESM)"
+  },
+  "Express app setup": {
+    "prefix": "expapp",
+    "body": [
+      "import express from 'express';",
+      "const app = express();",
+      "",
+      "app.use(express.json());",
+      "",
+      "app.listen($1, () => {",
+      "  console.log('Server listening on port $1');",
+      "});"
+    ],
+    "description": "Podstawowy setup Express z ESM"
+  },
+  "Express route": {
+    "prefix": "exproute",
+    "body": ["app.$1('$2', (req, res) => {", "  $3", "});"],
+    "description": "Route Express (GET, POST, itd.)"
+  },
+  "Try catch block": {
+    "prefix": "tryc",
+    "body": [
+      "try {",
+      "  $1",
+      "} catch (error) {",
+      "  console.error('Error:', error);",
+      "}"
+    ],
+    "description": "Blok try/catch"
+  },
+  "ES class": {
+    "prefix": "class",
+    "body": [
+      "class $1 {",
+      "  constructor($2) {",
+      "    $3",
+      "  }",
+      "",
+      "  $4() {",
+      "    $5",
+      "  }",
+      "}",
+      "",
+      "export default $1;"
+    ],
+    "description": "Klasa ES6 z eksportem"
+  }
+}
